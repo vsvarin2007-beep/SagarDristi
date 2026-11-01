@@ -9,3 +9,4 @@ build/
 .env.local
 *.log
 drive_import/
+~$*.pptx
