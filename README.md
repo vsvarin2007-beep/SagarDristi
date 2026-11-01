@@ -1,14 +1,14 @@
 # SagarDrishti: Multimodal AI Maritime Oil Spill Forensics
 
-**Hacktoberfest Hack Day Chandigarh 2026 Submission**
-**Track: Best Use of Gemma 4**
+** Graviton 2026**
+**Theme: Open Innovation**
 
 ## Table of Contents
 1. [The Problem Statement](#1-the-problem-statement)
 2. [The Core Idea: Beyond Proximity](#2-the-core-idea-beyond-proximity)
-3. [Deep Research: The ₹5.1 Crore Failure & Flaws in Legacy Systems](#3-deep-research-the-51-crore-failure--flaws-in-legacy-systems)
+3. [Research: The ₹5.1 Crore Failure & Flaws in Legacy Systems](#3-research-the-51-crore-failure--flaws-in-legacy-systems)
 4. [Competitor Analysis](#4-competitor-analysis)
-5. [Best Use of Gemma 4: The Autonomous Agent](#5-best-use-of-gemma-4-the-autonomous-agent)
+5. [Use of Gemma 4: The Autonomous Agent](#5-use-of-gemma-4-the-autonomous-agent)
 6. [System Architecture & Tech Stack](#6-system-architecture--tech-stack)
 7. [Installation & Setup](#7-installation--setup)
 8. [Team ByteSquad](#8-team-bytesquad)
@@ -34,7 +34,7 @@ We built a **5-Factor Physics Engine** that evaluates every vessel in a 10,000-s
 
 To make this complex physics data accessible, we integrated **Google's Gemma 4** as a multimodal vision agent to analyze the raw radar imagery and generate human-readable forensic reports.
 
-## 3. Deep Research: The ₹5.1 Crore Failure & Flaws in Legacy Systems
+## 3. Research: The ₹5.1 Crore Failure & Flaws in Legacy Systems
 
 We conducted deep research into why previous government and commercial attempts to solve maritime and environmental visibility issues failed.
 
@@ -61,8 +61,8 @@ Most open-source and commercial solutions (like SkyTruth Cerulean) rely on stati
 
 **Our Novel Innovation:** The **Simulation IoU (Intersection over Union)**. We take a ship's position, simulate a spill using real wind and current vectors, and calculate the physical overlap with the real satellite-detected spill. This is mathematically sound, legal-grade evidence.
 
-## 5. Best Use of Gemma 4: The Autonomous Agent
-For the Hacktoberfest "Best Use of Gemma 4" track, we integrated Google's **Gemma 4 (26B A4B)** via the new `google-genai` SDK as an **Autonomous Multimodal Forensic Agent**.
+## 5. Use of Gemma 4: The Autonomous Agent
+In order to make a multimodal forensic agent, we integrated Google's Gemma 4 (26B A4B)** via the new `google-genai` SDK .
 
 ### How We Used Gemma 4:
 1. **Multimodal Vision Reasoning:** Raw Sentinel-1 SAR (Synthetic Aperture Radar) imagery is noisy and impossible for a human to read without specialized training. We send the raw image bytes directly to Gemma 4. The model *visually analyzes* the radar data, identifies the oil slick, and assesses severity.
