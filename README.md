@@ -1,6 +1,6 @@
 # SagarDrishti: Multimodal AI Maritime Oil Spill Forensics
 
-** Graviton 2026**
+**Graviton 2026**
 **Theme: Open Innovation**
 
 ## Table of Contents
