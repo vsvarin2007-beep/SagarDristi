@@ -27,7 +27,7 @@ export function exportForensicReportPdf({
   reportText,
   imageDataUrl,
   targetArea = 'Singapore Strait TSS (1°15\'00"N 103°48\'00"E)',
-  confidence = '83.0% Certainty',
+  confidence = '87.4% Certainty',
   damping = '-22.4 dB Attenuation',
   status = 'CRITICAL RADAR ANOMALY CONFIRMED',
 }: ExportPdfOptions) {
