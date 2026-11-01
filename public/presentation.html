@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SagarDrishti — Executive Briefing Deck</title>
+  <title>SagarDrishti — Team ByteSquad Presentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -20,7 +20,7 @@
     }
     header {
       height: 54px;
-      background: rgba(10, 16, 24, 0.85);
+      background: rgba(10, 16, 24, 0.9);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
       display: flex;
@@ -36,7 +36,7 @@
     }
     .brand img {
       height: 24px;
-      object-contain: fit;
+      object-fit: contain;
     }
     .brand-title {
       font-size: 15px;
@@ -86,6 +86,9 @@
       border: none;
       color: #04080E;
       font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
     }
     .btn-download:hover {
       background: #5FE38A;
@@ -99,32 +102,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 20px;
     }
     .slide {
       position: absolute;
-      width: 92%;
+      width: 94%;
       max-width: 1400px;
-      height: 90%;
+      height: 92%;
       background: #080E18;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
-      padding: 48px;
+      padding: 40px 48px;
       display: flex;
       flex-direction: column;
       opacity: 0;
       pointer-events: none;
-      transform: scale(0.96);
+      transform: scale(0.97);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      overflow-y: auto;
     }
     .slide.active {
       opacity: 1;
       pointer-events: auto;
       transform: scale(1);
     }
-
-    /* Cyber top bar on each slide */
     .slide::before {
       content: '';
       position: absolute;
@@ -142,42 +144,42 @@
       color: #5BC0BE;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .slide-title {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 800;
       color: #fff;
       letter-spacing: -0.02em;
       margin-bottom: 6px;
     }
     .slide-subtitle {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #94A3B8;
-      margin-bottom: 32px;
-      max-width: 900px;
+      margin-bottom: 24px;
+      max-width: 1050px;
       line-height: 1.5;
     }
 
     .slide-content {
       flex: 1;
       display: grid;
-      gap: 20px;
+      gap: 16px;
       align-content: stretch;
     }
 
     .card {
       background: #0E1826;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 12px;
-      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       transition: all 0.2s;
     }
     .card:hover {
-      border-color: rgba(91, 192, 190, 0.3);
+      border-color: rgba(91, 192, 190, 0.35);
       transform: translateY(-2px);
     }
     .card-tag {
@@ -189,50 +191,63 @@
       margin-bottom: 8px;
     }
     .card-head {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: #fff;
       margin-bottom: 8px;
     }
     .card-body {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #94A3B8;
       line-height: 1.6;
     }
-    .card-val {
-      font-size: 34px;
-      font-weight: 800;
-      color: #5FE38A;
-      font-family: 'Inter', sans-serif;
-      margin: 8px 0;
+    .card-body strong { color: #CBD5E1; }
+
+    .banner {
+      background: rgba(14, 24, 38, 0.85);
+      border: 1px solid rgba(91, 192, 190, 0.3);
+      border-radius: 8px;
+      padding: 12px 20px;
+      margin-top: 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .accent-cyan { color: #5BC0BE; }
-    .accent-green { color: #5FE38A; }
-    .accent-amber { color: #F59E0B; }
-    .accent-red { color: #EF4444; }
+    .banner-green { border-color: rgba(95, 227, 138, 0.35); color: #5FE38A; }
+    .banner-amber { border-color: rgba(245, 158, 11, 0.35); color: #F59E0B; }
+    .banner-cyan { border-color: rgba(91, 192, 190, 0.35); color: #5BC0BE; }
 
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-5 { grid-template-columns: repeat(5, 1fr); }
 
     .hero-title {
-      font-size: 58px;
+      font-size: 52px;
       font-weight: 900;
       letter-spacing: -0.03em;
       color: #fff;
       line-height: 1.1;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+    }
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 700;
+      color: #5FE38A;
+      margin-bottom: 10px;
     }
     .hero-tagline {
-      font-size: 20px;
+      font-size: 14px;
       color: #CBD5E1;
-      max-width: 850px;
+      max-width: 900px;
       line-height: 1.5;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
     footer {
-      height: 48px;
+      height: 44px;
       padding: 0 24px;
       display: flex;
       align-items: center;
@@ -266,387 +281,447 @@
     <div class="brand">
       <img src="/graviton-cropped.png" alt="Graviton">
       <div class="brand-title">Sagar<span>Drishti</span></div>
-      <span class="badge">DEFENSE BRIEFING // 2026</span>
+      <span class="badge">TEAM BYTESQUAD</span>
     </div>
     <div class="nav-controls">
       <span>SLIDE <span id="curSlide" style="color: #fff; font-weight:700;">1</span> OF 10</span>
       <button class="btn" onclick="prevSlide()">◀ Prev</button>
       <button class="btn" onclick="nextSlide()">Next ▶</button>
-      <a href="/SagarDrishti_Maritime_Intelligence_Deck.pptx" download class="btn btn-download">⬇ Download PPTX</a>
+      <a href="/SagarDrishti_ByteSquad_Presentation.pptx" download class="btn btn-download">⬇ Download PPTX</a>
     </div>
   </header>
 
   <div id="stage">
 
-    <!-- SLIDE 1: HERO TITLE -->
+    <!-- SLIDE 1: TITLE -->
     <div class="slide active">
-      <div class="slide-category">// AUTONOMOUS MARITIME INTELLIGENCE & FORENSICS</div>
+      <div class="slide-category">// PROJECT PRESENTATION</div>
       <div class="hero-title">SagarDrishti</div>
-      <div class="hero-tagline">AI-Powered Sentinel-1 SAR Oil Spill Detection, Hydrodynamic Drift Inversion & Vessel Attribution System</div>
-      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; color:#5FE38A; margin-bottom:40px;">
-        POWERED BY GRAVITON MARITIME INTELLIGENCE ENGINE · PRODUCTION DECK v2.4.0
+      <div class="hero-sub">AI-Powered Maritime Oil Spill Detection and Vessel Attribution</div>
+      <div class="hero-tagline">Satellite-based oil spill detection, drift analysis, and vessel movement correlation for maritime environmental monitoring.</div>
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; color:#5BC0BE; margin-bottom:28px;">
+        Presented by: Team ByteSquad  |  Maritime Environmental Monitoring
       </div>
 
       <div class="slide-content grid-4">
         <div class="card">
-          <div class="card-tag">DETECTION F1-SCORE</div>
-          <div class="card-val accent-green">94.2%</div>
-          <div class="card-body">U-Net++ radar backscatter segmentation vs verified Sentinel-1 callsets.</div>
+          <div class="card-tag">TECHNOLOGY PILLAR 01</div>
+          <div class="card-head">Artificial Intelligence</div>
+          <div class="card-body">Deep learning-based image segmentation using U-Net++ architecture for detecting low-backscatter oil signatures.</div>
         </div>
         <div class="card">
-          <div class="card-tag">INFERENCE LATENCY</div>
-          <div class="card-val accent-cyan">&lt; 450 ms</div>
-          <div class="card-body">Edge GPU execution enabling real-time alert broadcast to Coast Guards.</div>
+          <div class="card-tag">TECHNOLOGY PILLAR 02</div>
+          <div class="card-head">Satellite Imagery</div>
+          <div class="card-body">Sentinel-1 Synthetic Aperture Radar (SAR) C-band data for penetrating cloud cover and darkness.</div>
         </div>
         <div class="card">
-          <div class="card-tag">VESSEL ATTRIBUTION</div>
-          <div class="card-val accent-green">91.8%</div>
-          <div class="card-body">Multi-factor Bayesian scoring matching slicks to culprit vessels.</div>
+          <div class="card-tag">TECHNOLOGY PILLAR 03</div>
+          <div class="card-head">Geospatial Analysis</div>
+          <div class="card-body">Environmental ocean current and wind drift modeling with coastal boundary integration.</div>
         </div>
         <div class="card">
-          <div class="card-tag">WATER INTEGRITY</div>
-          <div class="card-val accent-cyan">100%</div>
-          <div class="card-body">Raycasting collision engine preventing impossible land-crossing vectors.</div>
+          <div class="card-tag">TECHNOLOGY PILLAR 04</div>
+          <div class="card-head">Maritime Intelligence</div>
+          <div class="card-body">Automated Identification System (AIS) vessel trajectory cross-referencing and candidate prioritization.</div>
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 2: THE PROBLEM -->
+    <!-- SLIDE 2: PROBLEM STATEMENT -->
     <div class="slide">
-      <div class="slide-category">// OPERATIONAL CONTEXT & THREAT LANDSCAPE</div>
-      <div class="slide-title">The Invisible Maritime Oil Spill Crisis</div>
-      <div class="slide-subtitle">Why traditional aerial patrol flights and manual AIS inspection fail in critical choke points.</div>
+      <div class="slide-category">// PROBLEM STATEMENT</div>
+      <div class="slide-title">The Challenge of Maritime Oil Spill Detection</div>
+      <div class="slide-subtitle">Oil spills in maritime regions pose serious environmental and economic challenges. Detecting spills early and identifying their possible sources is difficult because of changing ocean conditions and incomplete vessel tracking information.</div>
       <div class="slide-content grid-2">
-        <div class="card" style="border-left: 3px solid #EF4444;">
-          <div class="card-tag accent-red">01 // DELIBERATE BILGE DUMPING</div>
-          <div class="card-head">$18B+ Annual Ecosystem Damage</div>
-          <div class="card-body">Merchant vessels deliberately discharge oily bilge wastewater at night or during adverse weather, exploiting enforcement coverage gaps in international transit corridors.</div>
+        <div class="card" style="border-left: 3px solid #5BC0BE;">
+          <div class="card-tag">01 // DETECTION COMPLEXITY</div>
+          <div class="card-head">Difficult Oil Spill Detection</div>
+          <div class="card-body">
+            • Oil spills can be difficult to identify in satellite imagery.<br>
+            • Natural phenomena such as low-wind areas and biogenic films can resemble oil slicks.<br>
+            • Traditional image thresholding may produce false detections.
+          </div>
         </div>
         <div class="card" style="border-left: 3px solid #F59E0B;">
-          <div class="card-tag accent-amber">02 // DARK VESSEL EVASION</div>
-          <div class="card-head">AIS Blackouts & GPS Spoofing</div>
-          <div class="card-body">Culprit vessels switch off AIS transponders or inject counterfeit positions during discharge windows, breaking linear vessel tracking and eliminating paper trails.</div>
+          <div class="card-tag">02 // TRACKING CONSTRAINTS</div>
+          <div class="card-head">Limited Vessel Tracking</div>
+          <div class="card-body">
+            • AIS provides information about vessel positions, speed, and direction.<br>
+            • AIS data may be unavailable, incomplete, or inconsistent.<br>
+            • Vessel tracking alone cannot confirm whether a ship caused an oil spill.
+          </div>
         </div>
         <div class="card" style="border-left: 3px solid #5BC0BE;">
-          <div class="card-tag accent-cyan">03 // RADAR BACKSCATTER AMBIGUITY</div>
-          <div class="card-head">Lookalike False Positives</div>
-          <div class="card-body">Natural biogenic films, algal blooms, low-wind sea slicking, and internal waves mimic oil signatures on synthetic aperture radar (SAR), generating false alerts in thresholding tools.</div>
+          <div class="card-tag">03 // OCEAN DYNAMICS</div>
+          <div class="card-head">Changing Ocean Conditions</div>
+          <div class="card-body">
+            • Wind, currents, and waves influence oil spill movement.<br>
+            • A spill may move far from its original location.<br>
+            • Simple backward tracking may produce inaccurate source estimates.
+          </div>
         </div>
-        <div class="card" style="border-left: 3px solid #5BC0BE;">
-          <div class="card-tag accent-cyan">04 // COMPLEX HYDRODYNAMIC DRIFT</div>
-          <div class="card-head">Singapore Strait Tidal Current Extremes</div>
-          <div class="card-body">Semi-diurnal tidal currents exceeding 4.5 kts rapidly shift and fragment slicks. Reconstructing the true discharge origin point without physics modeling is mathematically impossible.</div>
+        <div class="card" style="border-left: 3px solid #5FE38A;">
+          <div class="card-tag">04 // ATTRIBUTION AMBIGUITY</div>
+          <div class="card-head">Difficult Source Attribution</div>
+          <div class="card-body">
+            • Multiple vessels may pass near a detected spill.<br>
+            • Identifying a potential source requires combining spatial, temporal, and movement information.<br>
+            • Comprehensive multi-variable cross-referencing is necessary for investigation.
+          </div>
         </div>
+      </div>
+      <div class="banner banner-green">
+        <span>🎯</span>
+        <span><strong>Project Objective:</strong> Develop an intelligent system that detects oil spill candidates from satellite imagery and correlates their movement with maritime vessel data.</span>
       </div>
     </div>
 
-    <!-- SLIDE 3: ARCHITECTURE -->
+    <!-- SLIDE 3: SOLUTION & SYSTEM ARCHITECTURE -->
     <div class="slide">
-      <div class="slide-category">// END-TO-END PIPELINE</div>
-      <div class="slide-title">Multi-Sensor Intelligence Architecture</div>
-      <div class="slide-subtitle">A closed-loop pipeline connecting spaceborne SAR, high-frequency AIS, and reverse-time drift simulation.</div>
-      <div class="slide-content grid-4">
+      <div class="slide-category">// PROPOSED SOLUTION & SYSTEM ARCHITECTURE</div>
+      <div class="slide-title">SagarDrishti: End-to-End Intelligence Pipeline</div>
+      <div class="slide-subtitle">SagarDrishti combines satellite imagery analysis, ocean drift modeling, and vessel movement data to support oil spill investigation.</div>
+      <div class="slide-content grid-5">
         <div class="card">
           <div class="card-tag">STAGE 01</div>
-          <div class="card-head">Multi-Modal Ingest</div>
+          <div class="card-head">Data Ingestion</div>
           <div class="card-body">
-            • Sentinel-1 C-Band SAR (VV/VH)<br>
-            • Live high-density AIS stream<br>
-            • NOAA/HYCOM ocean currents<br>
-            • GFS 10-meter wind vectors
+            • Sentinel-1 SAR imagery<br>
+            • AIS vessel tracking data<br>
+            • Ocean current & wind data<br>
+            • Geographic & coastal info
           </div>
         </div>
         <div class="card">
           <div class="card-tag">STAGE 02</div>
-          <div class="card-head">U-Net++ Detection</div>
+          <div class="card-head">Spill Detection</div>
           <div class="card-body">
-            • Dual-polarization ratio analysis<br>
-            • Attention gating mechanisms<br>
-            • Mineral oil vs lookalike filter<br>
-            • Pixel-level polygon extraction
+            • Preprocessing satellite inputs<br>
+            • Deep learning segmentation<br>
+            • Identification of spill regions<br>
+            • Boundary & coordinate extraction
           </div>
         </div>
         <div class="card">
           <div class="card-tag">STAGE 03</div>
-          <div class="card-head">Drift Inversion</div>
+          <div class="card-head">Drift Analysis</div>
           <div class="card-body">
-            • Lagrangian particle tracking (RK4)<br>
-            • Fay's tri-phase spreading theory<br>
-            • 3.2% windage advection factor<br>
-            • Reverse trajectory reconstruction
+            • Wind & ocean current inputs<br>
+            • Modeling possible spill drift<br>
+            • Forward trajectory modeling<br>
+            • Backtracking to source regions
           </div>
         </div>
         <div class="card">
           <div class="card-tag">STAGE 04</div>
-          <div class="card-head">Bayesian Attribution</div>
+          <div class="card-head">Vessel Correlation</div>
           <div class="card-body">
-            • Spatiotemporal intersection test<br>
-            • Top 10 suspect vessel ranking<br>
-            • Kinematic maneuver anomaly flag<br>
-            • Automated legal PDF dossier
+            • Compare tracks with origin<br>
+            • Proximity & timing analysis<br>
+            • Course & speed evaluation<br>
+            • Ranking candidates for review
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-tag">STAGE 05</div>
+          <div class="card-head">Visualization</div>
+          <div class="card-body">
+            • Interactive maritime map<br>
+            • Spill location & vessel tracks<br>
+            • Trajectory visualization<br>
+            • Structured analytical reports
           </div>
         </div>
       </div>
+      <div class="banner banner-cyan">
+        <span>🔄</span>
+        <span>Unified Workflow: Satellite SAR Ingest ➔ Deep Learning Detection ➔ Hydrodynamic Drift Modeling ➔ AIS Correlation ➔ Geospatial Dashboard</span>
+      </div>
     </div>
 
-    <!-- SLIDE 4: AI SEGMENTATION -->
+    <!-- SLIDE 4: AI DETECTION -->
     <div class="slide">
-      <div class="slide-category">// COMPUTER VISION ENGINE</div>
-      <div class="slide-title">Attention U-Net++ Radar Segmentation</div>
-      <div class="slide-subtitle">Extracting subtle capillary wave damping from Sentinel-1 SAR imagery with sub-second turnaround.</div>
+      <div class="slide-category">// AI-BASED DETECTION</div>
+      <div class="slide-title">Deep Learning-Based Satellite Image Segmentation</div>
+      <div class="slide-subtitle">SagarDrishti uses deep learning-based segmentation to identify potential oil spill regions in Sentinel-1 SAR imagery.</div>
+      <div class="slide-content grid-3">
+        <div class="card">
+          <div class="card-tag">STEP 01</div>
+          <div class="card-head">Image Preprocessing</div>
+          <div class="card-body">
+            • Prepare satellite imagery for model input.<br>
+            • Apply normalization and image filtering.<br>
+            • Utilize available SAR polarizations (VV/VH) and derived radiometric features.<br>
+            • Mask non-marine areas using coastal boundary data.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-tag">STEP 02 (MODEL)</div>
+          <div class="card-head">U-Net++ Segmentation</div>
+          <div class="card-body">
+            • Encoder-decoder architecture with nested dense skip pathways.<br>
+            • Classifies image pixels to separate candidate spill regions from the sea surface.<br>
+            • Effectively resolves low-contrast slick boundaries.<br>
+            • Generates clean pixel-level probability masks.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-tag">STEP 03</div>
+          <div class="card-head">Spill Region Extraction</div>
+          <div class="card-body">
+            • Identify connected components in segmentation outputs.<br>
+            • Delineate slick boundaries and morphological contours.<br>
+            • Calculate exact geographic coordinates (lat/long).<br>
+            • Estimate approximate affected spill surface area.
+          </div>
+        </div>
+      </div>
+      <div class="banner banner-green">
+        <span>📊</span>
+        <span><strong>Visual Pipeline:</strong> Original Satellite Image (Sentinel-1 SAR) ➔ Predicted Spill Mask ➔ Spill Candidate Coordinates ➔ Estimated Spill Area</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: DRIFT ANALYSIS -->
+    <div class="slide">
+      <div class="slide-category">// DRIFT ANALYSIS</div>
+      <div class="slide-title">Understanding Spill Movement Through Ocean Dynamics</div>
+      <div class="slide-subtitle">Oil spills move under the influence of environmental conditions. SagarDrishti uses drift analysis to estimate how a detected spill may have moved and to investigate possible source locations.</div>
       <div class="slide-content grid-2">
         <div class="card">
-          <div class="card-tag">ARCHITECTURE ADVANTAGES</div>
-          <div class="card-head">Nested Dense Skip Connections</div>
+          <div class="card-tag">INFLUENCING FACTORS</div>
+          <div class="card-head">Key Environmental Factors</div>
           <div class="card-body">
-            <strong>▶ Feature Reuse:</strong> Dense skip pathways reduce the semantic gap between encoder feature maps and decoder upsampling, resolving micro-slicks as small as 0.05 km².<br><br>
-            <strong>▶ Attention Gating:</strong> Suppresses sea surface clutter noise and accentuates dark patch gradient boundaries.<br><br>
-            <strong>▶ Dual Polarimetry:</strong> VV band measures surface capillary wave damping; VH band isolates ship structures. The VV/VH ratio reliably eliminates natural biogenic lookalikes.
+            • <strong>Ocean Currents:</strong> Primary advective forcing driving the bulk displacement of surface slicks.<br><br>
+            • <strong>Wind Direction & Speed:</strong> Surface windage directly influences slick drift velocity and elongation.<br><br>
+            • <strong>Wave-Induced Movement:</strong> Stokes drift and wave action contribute to surface spreading and dispersion.<br><br>
+            • <strong>Spill Observation Time:</strong> The elapsed interval between initial discharge and satellite capture.<br><br>
+            • <strong>Geographic Constraints:</strong> Shorelines, islands, and shallow passages that restrict possible drift trajectories.
           </div>
         </div>
         <div class="card">
-          <div class="card-tag">VALIDATED BENCHMARKS</div>
-          <div class="card-head">Evaluation Metrics</div>
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:12px;">
-            <div>
-              <div class="card-val accent-green">94.2%</div>
-              <div class="card-body">Segmentation F1-Score</div>
-            </div>
-            <div>
-              <div class="card-val accent-cyan">412 ms</div>
-              <div class="card-body">Inference Latency</div>
-            </div>
-            <div>
-              <div class="card-val accent-green">2.8%</div>
-              <div class="card-body">False Alarm Rate</div>
-            </div>
-            <div>
-              <div class="card-val accent-amber">0.05 km²</div>
-              <div class="card-body">Min Detectable Area</div>
-            </div>
+          <div class="card-tag">SYSTEM WORKFLOW</div>
+          <div class="card-head">5-Step Drift Modeling Workflow</div>
+          <div class="card-body">
+            <strong>1. Spill Observation:</strong> Identify the detected spill location from satellite imagery.<br><br>
+            <strong>2. Environmental Data Integration:</strong> Ingest available wind and ocean current data for surrounding conditions.<br><br>
+            <strong>3. Forward Drift Modeling:</strong> Estimate possible spill dispersion under environmental forces.<br><br>
+            <strong>4. Backward Drift Estimation:</strong> Trace possible movement paths backward from observed spill region.<br><br>
+            <strong>5. Source Region Estimation:</strong> Identify a candidate region from which the spill may have originated.
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- SLIDE 5: DRIFT PHYSICS -->
-    <div class="slide">
-      <div class="slide-category">// PHYSICS-DRIVEN BACKTRACKING</div>
-      <div class="slide-title">Lagrangian Hydrodynamics & Fay's Spreading</div>
-      <div class="slide-subtitle">Solving the backward-time advection equation to discover where and when the discharge occurred.</div>
-      <div class="slide-content grid-3">
-        <div class="card">
-          <div class="card-tag">FAY'S SPREADING REGIMES</div>
-          <div class="card-head">Volumetric Inversion</div>
-          <div class="card-body">
-            Surface slick expansion follows three sequential mechanical forces:<br><br>
-            • <strong>Gravity-Inertial:</strong> Initial rapid radial blowout.<br>
-            • <strong>Gravity-Viscous:</strong> r ∝ (Δ·g·V² / ν^0.5)^1/4 · t^3/8<br>
-            • <strong>Surface Tension:</strong> Governed by net spreading coefficient.<br><br>
-            By measuring current slick perimeter, SagarDrishti solves for original volume and discharge duration.
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-tag">LAGRANGIAN PARTICLES</div>
-          <div class="card-head">RK4 Reverse Advection</div>
-          <div class="card-body">
-            5,000 virtual slick particles are integrated in reverse time:<br><br>
-            <code>dx/dt = - [ U_current + α·U_wind + U_wave ]</code><br><br>
-            • <strong>α_wind = 0.032:</strong> Empirical windage factor.<br>
-            • <strong>HYCOM 1/12°:</strong> Hourly ocean current tensors.<br>
-            • <strong>Stokes Drift:</strong> Wave spectrum momentum transfer.
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-tag">GEOGRAPHIC BOUNDARIES</div>
-          <div class="card-head">Singapore Strait Physics</div>
-          <div class="card-body">
-            • Reversing semi-diurnal tidal streams of 4.5+ kts.<br>
-            • Complex narrow channel bathymetry.<br>
-            • Raycast ray-crossing algorithm prevents drift trajectories from intersecting island landmasses.
-          </div>
-        </div>
+      <div class="banner banner-amber">
+        <span>⚠️</span>
+        <span><strong>Key Point:</strong> Drift analysis estimates possible source regions; it does not independently prove the exact discharge location.</span>
       </div>
     </div>
 
-    <!-- SLIDE 6: ATTRIBUTION ENGINE -->
+    <!-- SLIDE 6: VESSEL ATTRIBUTION -->
     <div class="slide">
-      <div class="slide-category">// FORENSIC EVIDENCE SCORING</div>
-      <div class="slide-title">Multi-Factor Bayesian Vessel Identification</div>
-      <div class="slide-subtitle">Combining spatial, temporal, kinematic, and vessel compliance indicators into a defensible score.</div>
+      <div class="slide-category">// VESSEL ATTRIBUTION</div>
+      <div class="slide-title">Identifying Potential Vessels Associated with an Oil Spill</div>
+      <div class="slide-subtitle">SagarDrishti correlates estimated spill source regions with available AIS vessel movement data to identify vessels that may have been present during the incident.</div>
       <div class="slide-content grid-2">
         <div class="card">
-          <div class="card-tag">COMPOSITE FORMULA</div>
-          <div class="card-head">S_total = Σ (w_i · S_i)</div>
+          <div class="card-tag">CORRELATION CRITERIA</div>
+          <div class="card-head">Vessel Correlation Factors</div>
           <div class="card-body">
-            • <strong>Spatial Proximity (35%):</strong> Mahalanobis distance from historic vessel waypoint to reconstructed spill center.<br><br>
-            • <strong>Temporal Alignment (30%):</strong> Delta between estimated discharge timestamp and vessel transit window.<br><br>
-            • <strong>Kinematic Anomaly (20%):</strong> Sudden speed drops (e.g. 14 kts → 6 kts) or sharp turns typical of bilge tank flushing.<br><br>
-            • <strong>Vessel Classification (15%):</strong> Deadweight tonnage, crude tanker status, and historical Port State Control record.
+            <strong>1. Spatial Proximity:</strong> Compare vessel positions with the estimated spill source region to identify vessels that passed near the candidate location.<br><br>
+            <strong>2. Temporal Alignment:</strong> Compare vessel movement times with estimated spill observation and drift periods.<br><br>
+            <strong>3. Vessel Movement:</strong> Analyze vessel speed and course changes to identify unusual movement patterns for investigation.<br><br>
+            <strong>4. AIS Data Availability:</strong> Check availability and continuity of vessel tracking data, identifying gaps or inconsistencies.
           </div>
         </div>
         <div class="card">
-          <div class="card-tag">LIVE SUSPECT ATTRIBUTION MATRIX</div>
-          <div class="card-head">Case Study: Singapore Strait</div>
+          <div class="card-tag">PROCESS & OUTPUT</div>
+          <div class="card-head">Attribution Workflow & Deliverables</div>
           <div class="card-body">
-            <div style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 10px; margin-bottom: 10px;">
-              <strong style="color:#fff;">MSC TASMANIA (IMO 9484326)</strong> — <span class="accent-red" style="font-weight:700;">94.8% CRITICAL</span><br>
-              <span style="font-size:12px;">Crude Tanker · Intersect error: 82m at t - 4.2h · Speed dropped 14.1 → 5.8 kts.</span>
-            </div>
-            <div style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 10px; margin-bottom: 10px;">
-              <strong style="color:#fff;">PACIFIC VOYAGER (IMO 9312004)</strong> — <span class="accent-amber" style="font-weight:700;">68.4% MODERATE</span><br>
-              <span style="font-size:12px;">Chemical Carrier · Transit corridor offset 2.7 km · Steady heading maintained.</span>
-            </div>
-            <div>
-              <strong style="color:#fff;">EVER GLORY (IMO 9811002)</strong> — <span class="accent-green" style="font-weight:700;">24.1% CLEARED</span><br>
-              <span style="font-size:12px;">Container Ship · Reverse drift cone exclusion · Trajectory outside spill boundary.</span>
-            </div>
+            <strong>Attribution Pipeline:</strong><br>
+            Satellite Spill Detection ➔ Source Region Estimation ➔ AIS Track Comparison ➔ Candidate Vessel Ranking<br><br>
+            <strong>Expected Outputs:</strong><br>
+            • Potentially associated vessels list<br>
+            • Vessel trajectory and track visualization<br>
+            • Spatial and temporal correlation information<br>
+            • Ranked candidate vessels for prioritized investigation<br><br>
+            Results are presented in structured tables to assist maritime authorities.
           </div>
         </div>
       </div>
+      <div class="banner banner-amber">
+        <span>⚖️</span>
+        <span><strong>Important:</strong> A vessel appearing near a spill is not proof of responsibility. The system supports investigation and prioritization, not legal determination.</span>
+      </div>
     </div>
 
-    <!-- SLIDE 7: COMMAND DECK -->
+    <!-- SLIDE 7: INTERACTIVE VISUALIZATION -->
     <div class="slide">
-      <div class="slide-category">// 3D DIGITAL TWIN & GEOSPATIAL HUD</div>
-      <div class="slide-title">High-Fidelity Tactical Command Center</div>
-      <div class="slide-subtitle">Sub-meter digital twin of maritime waterways with realistic navigation constraints and radar effects.</div>
+      <div class="slide-category">// INTERACTIVE MARITIME VISUALIZATION</div>
+      <div class="slide-title">Geospatial Monitoring & Vessel Tracking Dashboard</div>
+      <div class="slide-subtitle">SagarDrishti provides a visual interface for exploring detected oil spills, vessel movement, and possible spill trajectories.</div>
       <div class="slide-content grid-2">
         <div class="card">
-          <div class="card-tag">3D EARTH GLOBE</div>
-          <div class="card-head">Three.js Geospatial Engine</div>
+          <div class="card-tag">01 // GEOSPATIAL MAP</div>
+          <div class="card-head">Interactive Map</div>
           <div class="card-body">
-            • Photorealistic textured Earth with day/night terminator and atmospheric halo.<br>
-            • Orbital tracking for Sentinel-1 & Sentinel-2 constellations.<br>
-            • Smooth camera flight from global orbit down to port berth level.<br>
-            • Integrated live weather, current vectors, and bathymetry overlays.
+            • Display maritime regions, shipping lanes, and coastlines.<br>
+            • Visualize detected spill boundaries and geographical locations.<br>
+            • Explore geographic areas of interest with pan, zoom, and layer toggles.
           </div>
         </div>
         <div class="card">
-          <div class="card-tag">MARITIME INTEGRITY & UI</div>
-          <div class="card-head">Water-Only Navigation Safety</div>
+          <div class="card-tag">02 // AIS TRACKS</div>
+          <div class="card-head">Vessel Tracking</div>
           <div class="card-body">
-            • <strong>Land Avoidance Engine:</strong> Raycast polygon boundaries for Singapore Mainland, Johor, Batam & Bintan prevent vessels crossing land.<br>
-            • <strong>De-Cluttered Fleet:</strong> Strictly 4–5 realistic vessels per choke point with COLREGs nautical separation (&gt;1,200m).<br>
-            • <strong>Tactical Cursor Radar:</strong> Interactive hover cards displaying live speed, heading, draught, and radar reticle.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 8: FUTURE PREDICTION -->
-    <div class="slide">
-      <div class="slide-category">// CRISIS MITIGATION</div>
-      <div class="slide-title">Future Prediction & Shoreline Beaching Risk</div>
-      <div class="slide-subtitle">Forecasting slick trajectory up to 72 hours ahead to direct containment booms and skimming vessels.</div>
-      <div class="slide-content grid-3">
-        <div class="card">
-          <div class="card-tag">DISPERSION CONE</div>
-          <div class="card-head">Monte Carlo Forecast</div>
-          <div class="card-body">
-            Simulates 1,000 forward drift realizations factoring forecast current and wind vectors. Produces 50%, 80%, and 95% confidence cones for emergency planners.
+            • Display available AIS vessel positions on the live canvas.<br>
+            • Show historical and active vessel movement trajectories.<br>
+            • Present vessel details such as speed, heading, and identification when available.
           </div>
         </div>
         <div class="card">
-          <div class="card-tag">ESTIMATED TIME OF BEACHING</div>
-          <div class="card-head">Automated Shoreline Alert</div>
+          <div class="card-tag">03 // SPILL EXTENTS</div>
+          <div class="card-head">Spill Visualization</div>
           <div class="card-body">
-            Calculates exact beaching arrival time (ETB) along coastal assets. Automated priority flags protect mangrove sanctuaries, coral reefs, and industrial desalination intakes.
+            • Display segmented spill polygons and affected surface areas.<br>
+            • Show estimated source regions derived from backtrack analysis.<br>
+            • Visualize candidate drift trajectories and dispersion paths.
           </div>
         </div>
         <div class="card">
-          <div class="card-tag">CLEANUP OPTIMIZATION</div>
-          <div class="card-head">Skimmer Fleet Guidance</div>
+          <div class="card-tag">04 // ANALYTICS</div>
+          <div class="card-head">Investigation Interface</div>
           <div class="card-body">
-            Calculates high-probability interception zones to position containment booms, reducing coastal contamination impact by up to 78%.
+            • Compare spill locations directly with vessel movement tracks.<br>
+            • Explore potential vessel correlations interactively.<br>
+            • Display analysis results in a structured, accessible interface.
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- SLIDE 9: BENCHMARKS -->
-    <div class="slide">
-      <div class="slide-category">// DEFENSE-GRADE PERFORMANCE</div>
-      <div class="slide-title">Validated Benchmarks & Operational Metrics</div>
-      <div class="slide-subtitle">Rigorous validation across historical maritime incidents and simulated Singapore Strait scenarios.</div>
-      <div class="slide-content grid-3">
-        <div class="card">
-          <div class="card-tag">DETECTION F1</div>
-          <div class="card-val accent-green">94.2%</div>
-          <div class="card-body">+28.4% improvement over standard Otsu SAR thresholding.</div>
-        </div>
-        <div class="card">
-          <div class="card-tag">ATTRIBUTION PRECISION</div>
-          <div class="card-val accent-green">91.8%</div>
-          <div class="card-body">Verified against ground-truth transponder anomaly records.</div>
-        </div>
-        <div class="card">
-          <div class="card-tag">INFERENCE SPEED</div>
-          <div class="card-val accent-cyan">412 ms</div>
-          <div class="card-body">Sub-second turnaround enabling instant tactical alert broadcast.</div>
-        </div>
-        <div class="card">
-          <div class="card-tag">COLLISION-FREE NAVIGATION</div>
-          <div class="card-val accent-cyan">100%</div>
-          <div class="card-body">Zero vessel or waypoint collisions across Singapore/Johor landmasses.</div>
-        </div>
-        <div class="card">
-          <div class="card-tag">FALSE ALARM RATE</div>
-          <div class="card-val accent-green">2.8%</div>
-          <div class="card-body">Eliminates costly false aerial patrol dispatches.</div>
-        </div>
-        <div class="card">
-          <div class="card-tag">AREA RECONSTRUCTION</div>
-          <div class="card-val accent-amber">±4.3%</div>
-          <div class="card-body">Accurate volumetric inversion for legal evidentiary compliance.</div>
-        </div>
+      <div class="banner banner-cyan">
+        <span>💻</span>
+        <span><strong>Technology Stack:</strong> React · Vite · TypeScript · Map-based Geospatial Visualization · FastAPI Backend API Integration</span>
       </div>
     </div>
 
-    <!-- SLIDE 10: ROADMAP -->
+    <!-- SLIDE 8: PREDICTIVE SPILL MONITORING -->
     <div class="slide">
-      <div class="slide-category">// STRATEGIC VISION & SCALE</div>
-      <div class="slide-title">Roadmap: Autonomous Maritime Stewardship</div>
-      <div class="slide-subtitle">Transforming maritime security from reactive patrol reports to real-time automated interdiction.</div>
+      <div class="slide-category">// PREDICTIVE SPILL MONITORING</div>
+      <div class="slide-title">Spill Movement Prediction & Environmental Risk Analysis</div>
+      <div class="slide-subtitle">SagarDrishti can use available environmental data to estimate possible future spill movement and support monitoring of affected coastal regions.</div>
       <div class="slide-content grid-3">
-        <div class="card" style="border-top: 3px solid #5FE38A;">
-          <div class="card-tag accent-green">PHASE 1 // COMPLETED</div>
-          <div class="card-head">Singapore Strait Core</div>
+        <div class="card">
+          <div class="card-tag">FORWARD DRIFT</div>
+          <div class="card-head">Forward Drift Prediction</div>
           <div class="card-body">
-            ✔ Sentinel-1 SAR U-Net++ segmentation<br>
-            ✔ Lagrangian reverse drift backtracking<br>
-            ✔ Top 10 suspect Bayesian attribution<br>
-            ✔ Land collision-free navigation engine<br>
-            ✔ Graviton command deck UI & PDF dossiers
+            • Use the detected spill location as the starting point.<br>
+            • Incorporate available wind and ocean current forecast information.<br>
+            • Estimate possible future spill trajectories over operational horizons.<br>
+            • Visualize predicted movement on the map.
           </div>
         </div>
-        <div class="card" style="border-top: 3px solid #5BC0BE;">
-          <div class="card-tag accent-cyan">PHASE 2 // IN PROGRESS</div>
-          <div class="card-head">Multi-Constellation Fusion</div>
+        <div class="card">
+          <div class="card-tag">COASTAL RISK</div>
+          <div class="card-head">Coastal Risk Assessment</div>
           <div class="card-body">
-            ▶ NISAR (L-band) & RADARSAT-2 ingest<br>
-            ▶ Direct Coast Guard Operations Center API<br>
-            ▶ Satellite AIS telemetry (Spire/exactEarth)<br>
-            ▶ Automated evidentiary court filings
+            • Identify coastal regions near predicted spill trajectories.<br>
+            • Highlight shoreline areas that may require further monitoring.<br>
+            • Support the prioritization of environmentally sensitive locations (mangroves, coral reefs, ports).
           </div>
         </div>
-        <div class="card" style="border-top: 3px solid #F59E0B;">
-          <div class="card-tag accent-amber">PHASE 3 // FUTURE</div>
-          <div class="card-head">Autonomous Drone Tasking</div>
+        <div class="card">
+          <div class="card-tag">APPLICATIONS</div>
+          <div class="card-head">Potential Applications</div>
           <div class="card-body">
-            ★ Autonomous optical drone dispatch<br>
-            ★ Sensor-to-shooter loop (&lt;15 min interdiction)<br>
-            ★ Global choke points: Malacca, Suez, Hormuz<br>
-            ★ Commercial Port Authority licensing
+            • <strong>Environmental Monitoring:</strong> Track possible movement toward coastal habitats.<br>
+            • <strong>Response Planning:</strong> Provide geographic information to support monitoring and response decisions.<br>
+            • <strong>Risk Visualization:</strong> Display predicted trajectories and potential areas of concern.
           </div>
         </div>
+      </div>
+      <div class="banner banner-amber">
+        <span>ℹ️</span>
+        <span><strong>Note:</strong> Prediction accuracy depends on the quality of environmental data and the drift model. Forecasts are estimates, not guaranteed spill paths.</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: TECHNOLOGY STACK & EVALUATION -->
+    <div class="slide">
+      <div class="slide-category">// TECHNOLOGY STACK & PROJECT EVALUATION</div>
+      <div class="slide-title">Technologies Used & Project Evaluation Framework</div>
+      <div class="slide-subtitle">A structured overview of core technologies implemented and measurable evaluation approaches for system verification.</div>
+      <div class="slide-content grid-2">
+        <div class="card">
+          <div class="card-tag">STACK BREAKDOWN</div>
+          <div class="card-head">Technologies Used</div>
+          <div class="card-body">
+            • <strong>Artificial Intelligence:</strong><br>
+            Deep learning · U-Net++ segmentation · Satellite image analysis<br><br>
+            • <strong>Satellite & Environmental Data:</strong><br>
+            Sentinel-1 SAR · AIS telemetry · Wind and ocean current datasets<br><br>
+            • <strong>Backend Infrastructure:</strong><br>
+            Python · FastAPI · PyTorch · Scikit-learn · NumPy · OpenCV<br><br>
+            • <strong>Frontend Interface:</strong><br>
+            React · Vite · TypeScript · Tailwind CSS · MapLibre Geospatial Engine
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-tag">MEASURABLE OUTPUTS</div>
+          <div class="card-head">Evaluation Approach</div>
+          <div class="card-body">
+            The project should be evaluated using measurable outputs:<br><br>
+            • <strong>Spill Detection:</strong> Precision, recall, and F1-score on SAR test sets.<br>
+            • <strong>Segmentation:</strong> Intersection over Union (IoU) and Dice coefficient.<br>
+            • <strong>Drift Analysis:</strong> Spatial error between estimated and reference spill locations.<br>
+            • <strong>Vessel Correlation:</strong> Accuracy of candidate ranking against verified benchmark cases.<br>
+            • <strong>System Performance:</strong> Actual inference and processing time.
+          </div>
+        </div>
+      </div>
+      <div class="banner banner-cyan">
+        <span>📈</span>
+        <span><strong>Evaluation Standard:</strong> Results should reflect empirically measured values on validated benchmark test datasets.</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: CONCLUSION & FUTURE SCOPE -->
+    <div class="slide">
+      <div class="slide-category">// CONCLUSION & FUTURE SCOPE</div>
+      <div class="slide-title">Towards Intelligent Maritime Environmental Monitoring</div>
+      <div class="slide-subtitle">SagarDrishti aims to improve maritime oil spill monitoring by combining satellite image analysis, environmental drift modeling, and vessel movement correlation.</div>
+      <div class="slide-content grid-2">
+        <div class="card">
+          <div class="card-tag">ACHIEVEMENTS</div>
+          <div class="card-head">Project Contributions</div>
+          <div class="card-body">
+            ✔ AI-based detection of potential oil spill regions from satellite imagery.<br><br>
+            ✔ Integration of satellite, vessel, and environmental information.<br><br>
+            ✔ Drift analysis to estimate possible spill source regions.<br><br>
+            ✔ AIS-based vessel correlation to support investigation.<br><br>
+            ✔ Interactive visualization of spill locations and vessel trajectories.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-tag">ROADMAP</div>
+          <div class="card-head">Future Scope</div>
+          <div class="card-body">
+            <strong>1. Improved Detection:</strong> Train and evaluate the segmentation model on larger and more diverse SAR datasets.<br><br>
+            <strong>2. Enhanced Environmental Modeling:</strong> Integrate more accurate and frequently updated wind and ocean current data.<br><br>
+            <strong>3. Better Vessel Correlation:</strong> Improve attribution using additional verified vessel and incident information.<br><br>
+            <strong>4. Real-Time Data Integration:</strong> Explore automated ingestion of satellite and AIS data sources.<br><br>
+            <strong>5. Environmental Response Support:</strong> Extend the system to help monitor coastal risk and support response planning.
+          </div>
+        </div>
+      </div>
+      <div class="banner banner-green">
+        <span>🌟</span>
+        <span><strong>Final Statement:</strong> SagarDrishti transforms maritime data into actionable environmental intelligence by connecting oil spill detection, drift analysis, and vessel tracking in a unified platform.</span>
       </div>
     </div>
 
   </div>
 
   <footer>
-    <div>SagarDrishti  |  Maritime & Ocean Intelligence Platform  ·  Powered by Graviton</div>
+    <div>SagarDrishti  |  Maritime Environmental Monitoring  ·  Team ByteSquad</div>
     <div class="dots" id="dotsContainer"></div>
     <div>Use Arrow Keys (◀ / ▶) to Navigate  ·  F11 for Full Screen</div>
   </footer>
