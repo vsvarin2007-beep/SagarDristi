@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const DEFAULT_API_BASE = typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
-  ? ''
-  : 'http://127.0.0.1:8000';
+// Set VITE_API_BASE in Vercel env vars to point to your hosted backend
+// e.g. https://your-backend.railway.app or your ngrok/colab URL
+export const DEFAULT_API_BASE = import.meta.env.VITE_API_BASE || 'http://127.0.0.1:8000';
 export const API_BASE = DEFAULT_API_BASE;
 
 let activeBaseUrl: string | null = null;
